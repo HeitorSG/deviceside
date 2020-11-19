@@ -24,3 +24,31 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+:root {
+    --ion-color-tcc: #38f357;
+    --ion-color-tcc-rgb: 23,162,184;
+    --ion-color-tcc-contrast: #ffffff;
+    --ion-color-tcc-contrast-rgb: 255,255,255;
+    --ion-color-tcc-shade: #148fa2;
+    --ion-color-tcc-tint: #2eabbf;
+  }
+  
+  .ion-color-tcc {
+    --ion-color-base: var(--ion-color-tcc);
+    --ion-color-base-rgb: var(--ion-color-tcc-rgb);
+    --ion-color-contrast: var(--ion-color-tcc-contrast);
+    --ion-color-contrast-rgb: var(--ion-color-tcc-contrast-rgb);
+    --ion-color-shade: var(--ion-color-tcc-shade);
+    --ion-color-tint: var(--ion-color-tcc-tint);
+  }
+
+ion-icon {
+  
+  
+    &[class*="custom-map"] {
+      background-image: url(./assets/icon/map.svg);
+    }
+   
+  
+  }

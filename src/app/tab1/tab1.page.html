@@ -1,17 +1,12 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 1
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content [fullscreen]="true" style="--background:  linear-gradient(180deg, #ffcfdf 0%, #17a2b8 74%);
+--background-image: linear-gradient(315deg, #ffcfdf 0%, #b0f3f1 74%);text-align:center;display:block;">
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+  <div style="display:inline-block;width:40vh;">
+  <ion-icon class="custom-map" style="height:150px; width:150px; margin-top:5vh;"></ion-icon>
+
+  <ion-input placeholder="Device Name" style="max-width:100vh;color:#121212; margin-top:45vh;border:solid 2px; border-radius:4px; border-color:rgb(29, 247, 247);background-color:#ffffff;text-align:left;"></ion-input>
+  <ion-input placeholder="Owner Name" style="max-width:100vh;color:#121212; margin-top:2vh;border:solid 2px; border-radius:4px; border-color:rgb(29, 247, 247);background-color:#ffffff;text-align:left;"></ion-input>
+  <ion-button color="tcc" expand="block" style="height:6vh;margin-top:2vh;--color:#121212;--background:#121212">Sincronizar</ion-button>
+</div>
 </ion-content>
