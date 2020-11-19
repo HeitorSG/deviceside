@@ -1,0 +1,7 @@
+{
+  "name": "deviceside",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
