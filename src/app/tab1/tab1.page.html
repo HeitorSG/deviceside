@@ -5,8 +5,19 @@
   <div style="display:inline-block;width:40vh;">
   <ion-icon class="custom-map" style="height:150px; width:150px; margin-top:5vh;"></ion-icon>
 
-  <ion-input placeholder="Device Name" style="max-width:100vh;color:#121212; margin-top:45vh;border:solid 2px; border-radius:4px; border-color:rgb(29, 247, 247);background-color:#ffffff;text-align:left;"></ion-input>
-  <ion-input placeholder="Owner Name" style="max-width:100vh;color:#121212; margin-top:2vh;border:solid 2px; border-radius:4px; border-color:rgb(29, 247, 247);background-color:#ffffff;text-align:left;"></ion-input>
-  <ion-button color="tcc" expand="block" style="height:6vh;margin-top:2vh;--color:#121212;--background:#121212">Sincronizar</ion-button>
+  <ion-input 
+  placeholder="Device Name" 
+  type="text"
+  name="deviceName"
+  id="deviceName"
+  [(ngModel)] = "deviceName"
+  style="max-width:100vh;color:#121212; margin-top:45vh;border:solid 2px; border-radius:4px; border-color:rgb(29, 247, 247);background-color:#ffffff;text-align:left;"></ion-input>
+  <ion-input placeholder="Owner Name" 
+  type="text"
+  name="ownerName"
+  id="deviceName"
+  [(ngModel)]="ownerName"
+  style="max-width:100vh;color:#121212; margin-top:2vh;border:solid 2px; border-radius:4px; border-color:rgb(29, 247, 247);background-color:#ffffff;text-align:left;"></ion-input>
+  <ion-button color="tcc" (click)="syncDevice()" expand="block" style="height:6vh;margin-top:2vh;--color:#121212;--background:#121212">Sincronizar</ion-button>
 </div>
 </ion-content>

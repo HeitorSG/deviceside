@@ -1,0 +1,14 @@
+.teste{
+    z-index:0;
+}
+canvas{
+    margin-top:-480px;
+}
+
+.ontop{
+    background-color: transparent;
+    margin-top:-480px;
+    height:480px;
+    width:640px;
+    z-index: 10;
+}
