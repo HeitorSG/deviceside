@@ -19,15 +19,15 @@ export class Tab1Page implements OnInit {
   }
 
   syncDevice(){
-    this.socket.syncDevice(this.deviceName, this.ownerName);
+    /*this.socket.syncDevice(this.deviceName, this.ownerName);
     this.socket.getSyncInfos().subscribe({
       next:(res) => {
         if(res != 0) {
           console.log(res);
-          this.storage.set('device', res);
+          this.storage.set('device', res);*/
           this.router.navigate(['tab2']);
-        }
+       /* }
       }
-    })
+    })*/
   }
 }

@@ -25,7 +25,7 @@ rejectUnauthorized: false}}
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [BrowserModule, WebcamModule,IonicModule.forRoot(), AppRoutingModule,  SocketIoModule.forRoot(socketconfig)],
+  imports: [BrowserModule, WebcamModule, IonicModule.forRoot(), AppRoutingModule,  SocketIoModule.forRoot(socketconfig)],
   providers: [
     LocalStorageService,
     StatusBar,
