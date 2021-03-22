@@ -16,30 +16,19 @@ export class Tab1Page implements OnInit {
 
   ngOnInit() {
     this.socket.setupSocketConnection();
-    this.checkDevice();
+
   }
 
   syncDevice(){
-    this.socket.syncDevice(this.deviceName, this.ownerName);
-    setInterval(() =>{
-      this.storage.get('user').subscribe((data) => {
-        if(data != undefined){
-          this.socket.syncDevice(data.name, data.ownername);
-        }
-      });
-    }, 10000);
-    
-  }
-
-  checkDevice(){
+    /*this.socket.syncDevice(this.deviceName, this.ownerName);
     this.socket.getSyncInfos().subscribe({
       next:(res) => {
         if(res != 0) {
           console.log(res);
-          this.storage.set('device', res);
+          this.storage.set('device', res);*/
           this.router.navigate(['tab2']);
-        }
+       /* }
       }
-    })
+    })*/
   }
 }
