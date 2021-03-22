@@ -12,12 +12,17 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import {LocalStorageService} from './local-storage.service';
+import {NgxAgoraModule} from 'ngx-agora';
+
 
 import {SocketIoModule,SocketIoConfig} from 'ngx-socket-io';
-const socketconfig: SocketIoConfig = {url:'http://localhost:3000', options:{ rememberUpgrade:true,
+const socketconfig: SocketIoConfig = {url:'https://tccserver.loca.lt', options:{ rememberUpgrade:true,
 transports: ['websocket'],
 secure:true, 
 rejectUnauthorized: false}}
+const agoraConfig = {
+  AppID: 'af7cf4e1dc8e4c1597497b3bbcead4c0'
+}
 
 
 
@@ -25,7 +30,7 @@ rejectUnauthorized: false}}
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [BrowserModule, WebcamModule,IonicModule.forRoot(), AppRoutingModule,  SocketIoModule.forRoot(socketconfig)],
+  imports: [BrowserModule, WebcamModule,IonicModule.forRoot(), AppRoutingModule, NgxAgoraModule.forRoot(agoraConfig), SocketIoModule.forRoot(socketconfig)],
   providers: [
     LocalStorageService,
     StatusBar,

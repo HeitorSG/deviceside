@@ -4,6 +4,7 @@
       Tab 2
     </ion-title>
   </ion-toolbar>
+<ion-icon name="chevron-forward-outline" (click)="goToTab3()"></ion-icon>
 </ion-header>
 <ion-content [fullscreen]="true">
  
@@ -13,7 +14,7 @@
     </ion-toolbar>
   </ion-header>
 
-  <webcam class="teste" #test></webcam>
+  <webcam [allowCameraSwitch]="allowCameraSwitch" [height]="1000" [width]="1000" class="teste" #test></webcam>
   <div class="ontop"></div>
   <body class="ontop" #bd>
 </body>

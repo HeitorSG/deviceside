@@ -3,6 +3,7 @@ import {Geolocation, Geoposition, GeolocationOptions} from '@ionic-native/geoloc
 import {SocketioService} from '../socketio.service';
 import {LocalStorageService} from '../local-storage.service';
 import * as faceapi from 'face-api.js';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -15,22 +16,22 @@ export class Tab2Page implements OnInit,AfterViewInit{
   @ViewChild('bd') body:ElementRef;
   
 
-  constructor(private geolocation:Geolocation, private socket:SocketioService, private storage:LocalStorageService) {
+  constructor(private geolocation:Geolocation, private socket:SocketioService, private storage:LocalStorageService, private router:Router) {
   }
 
   ngAfterViewInit(){
-      console.log(this.myvideo.canvas);
       this.myvideo.video.nativeElement.addEventListener('playing', () => {
-      console.log('funciona');
       const canvas = this.myvideo.canvas.nativeElement
       this.body.nativeElement.append(canvas);
       const displaySize = {width: this.myvideo.video.nativeElement.width, height: this.myvideo.video.nativeElement.height};
       faceapi.matchDimensions(canvas, displaySize);
       setInterval(async () => {
-        const dtc = await faceapi.detectAllFaces(this.myvideo.video.nativeElement, new faceapi.TinyFaceDetectorOptions()).withFaceLandmarks();
+        const dtc = await faceapi.detectAllFaces(this.myvideo.video.nativeElement, new faceapi.TinyFaceDetectorOptions()).withFaceLandmarks().withFaceExpressions();
         const resizedDtc = faceapi.resizeResults(dtc, displaySize);
         canvas.getContext('2d').clearRect(0, 0, canvas.width, canvas.height)
         faceapi.draw.drawDetections(canvas, resizedDtc);
+        faceapi.draw.drawFaceLandmarks(canvas, resizedDtc);
+        faceapi.draw.drawFaceExpressions(canvas, resizedDtc);
       }, 100);
     });
   }
@@ -58,6 +59,10 @@ export class Tab2Page implements OnInit,AfterViewInit{
       faceapi.nets.faceExpressionNet.loadFromUri('../../assets/models')
     ]);
     this.getPosition();
+  }
+
+  goToTab3(){
+    this.router.navigate(['tab3']);
   }
 
   
